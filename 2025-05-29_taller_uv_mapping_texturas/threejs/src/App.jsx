@@ -39,7 +39,7 @@ function Mesh(props) {
           ];
 
           setOgUvs(newDingus.geometry.getAttribute("uv"));
-          let offsets = newDingus.geometry.getAttribute("uv").array.map((v) => Math.random());
+          let offsets = newDingus.geometry.getAttribute("uv").array.map((v) => (Math.random() * 2 - 1));
           console.log(offsets);
           setUvsOffset(newDingus.geometry.getAttribute("uv").array.map((v) => v * 2));
           setDingus(newDingus);
@@ -56,7 +56,7 @@ function Mesh(props) {
         let uvs = ogUvs.clone();
         let localOffsets = uvsOffset;
         if (reroll) {
-          localOffsets = uvs.array.map((v) => Math.random());
+          localOffsets = uvs.array.map((v) => (Math.random() * 2 - 1));
           setUvsOffset(localOffsets);
         }
         let newUvs = [];
