@@ -1,0 +1,10 @@
+*.class
+*.jar
+*.exe
+*.log
+*.tmp
+*.svg
+*.zip
+thumb_cache/
+
+.idea/
