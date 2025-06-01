@@ -140,12 +140,12 @@ const FireParticleMaterial = shaderMaterial(
       mat4 rotX = rotXMatrix(angleY);
       mat4 rotY = rotYMatrix(angleXZ);
 
-      float invLifeStage = 1.0 - (t / life);
-      vec3 pos = position * invLifeStage;
+      float lifeStage = (t / life);
+      vec3 pos = position * (1.0 - lifeStage);
       pos = (rotY * rotX * vec4(pos, 1.0)).xyz;
 
       pos = pos + disp;
-      vColor = mix(sColor, eColor, invLifeStage);
+      vColor = mix(sColor, eColor, lifeStage);
 
       gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
     }
