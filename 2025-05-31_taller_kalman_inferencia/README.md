@@ -42,10 +42,10 @@ Este taller tiene como objetivo introducir conceptos de inferencia estadística 
 
 
 ### 🔹 Etapas realizadas
-1. Preparación de datos o escena.
-2. Aplicación de modelo o algoritmo.
-3. Visualización o interacción.
-4. Guardado de resultados.
+1. Creación de una señal sintética con ruido.
+2. Implementación del filtro de Kalman en 1D y 2D.
+3. Estimación de la variable oculta a partir de observaciones ruidosas.
+4. Visualización de los resultados: señal real, observada y estimada.
 
 
 ### 🔹 Código relevante
