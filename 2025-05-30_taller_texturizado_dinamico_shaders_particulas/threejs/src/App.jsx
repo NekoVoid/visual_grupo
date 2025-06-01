@@ -83,13 +83,14 @@ const ColorShiftMaterial = shaderMaterial(
 const FireParticleMaterial = shaderMaterial(
   {
     sColor: new THREE.Color(1.0, 1.0, 0.0), eColor: new THREE.Color(1.0, 0.2, 0.0),
-    time: 0, acc: new THREE.Vector3(0, 5, 0), drag: 0.1
+    time: 0, acc: new THREE.Vector3(0, 5, 0), drag: 0.22, particleCenter: new THREE.Vector3(0, 0, 0)
   },
   // vertex shader
   /*glsl*/`
     uniform float time;
     uniform float drag;
     uniform vec3 acc;
+    uniform vec3 particleCenter;
 
     uniform vec3 sColor;
     uniform vec3 eColor;
@@ -99,16 +100,52 @@ const FireParticleMaterial = shaderMaterial(
 
     varying vec3 vColor;
 
+    mat4 rotXMatrix(float angle) {
+      return mat4(
+        1.0, 0.0, 0.0, 0.0,
+        0.0, cos(angle), -sin(angle), 0.0,
+        0.0, sin(angle), cos(angle), 0.0,
+        0.0, 0.0, 0.0, 1.0
+      );
+    }
+    mat4 rotYMatrix(float angle) {
+      return mat4(
+        cos(angle), 0.0, sin(angle), 0.0,
+        0.0, 1.0, 0.0, 0.0,
+        -sin(angle), 0.0, cos(angle), 0.0,
+        0.0, 0.0, 0.0, 1.0
+      );
+    }
+
     void main() {
-      float t = time;
+      float t = mod(time, life);
+      vec3 disp = (speed * t) + (acc * t * t * 0.5) - (drag * t);
 
-      if (time > life) {
-        t = life;
-      }
+      vec3 locCenter = particleCenter + disp;
+      
+      vec3 fvec = vec3(0.0, 0.0, 1.0);
+      
+      vec3 camDir = (cameraPosition - locCenter);
+      
+      vec3 camDXZ = normalize(vec3(camDir.x, 0.0, camDir.z));
+      vec3 camDY = normalize(camDir);
+      
+      float signXZ = -sign(camDXZ.x);
+      float signY = sign(camDY.y);
+      
+      float angleXZ = acos(dot(fvec, camDXZ)) * signXZ;
+      float angleY = acos(dot(camDXZ, camDY)) * signY;
+      
+      
+      mat4 rotX = rotXMatrix(angleY);
+      mat4 rotY = rotYMatrix(angleXZ);
 
-      vec3 pos = position + (speed * t) + (acc * t * t * 0.5) - (drag * t);
+      float invLifeStage = 1.0 - (t / life);
+      vec3 pos = position * invLifeStage;
+      pos = (rotY * rotX * vec4(pos, 1.0)).xyz;
 
-      vColor = mix(sColor, eColor, 1.0 - (time / life));
+      pos = pos + disp;
+      vColor = mix(sColor, eColor, invLifeStage);
 
       gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
     }
@@ -135,7 +172,7 @@ function ParticleScene() {
   const partMesh = useRef();
   const [firePos, setFirePos] = useState(new THREE.Vector3(0,0,0));
 
-  const particleCount = 10;
+  const particleCount = 1000;
   const particleMaxLife = 5;
   const particleGeometry = ((count)=>{
   const geometry = new THREE.BufferGeometry()
@@ -163,17 +200,22 @@ function ParticleScene() {
     if (partMesh.current) {
       partMesh.current.geometry = particleGeometry(particleCount);
 
-      const ones = Array(partMesh.current.geometry.attributes.position.count).fill(1);
+      const ones = Array(particleCount).fill(1);
 
       partMesh.current.geometry.setAttribute("life", new THREE.BufferAttribute(
         new Float32Array(
-          ones.map(() => Array(4).fill(Math.pow(particleMaxLife, Math.random()))).flat()
+          ones.map(() => Array(3).fill(Math.pow(particleMaxLife, Math.random()))).flat()
         ), 1));
       partMesh.current.geometry.setAttribute("speed", new THREE.BufferAttribute(
         new Float32Array(ones.map(() => {
           const speed = new THREE.Vector3();
-          speed.setFromCylindricalCoords(Math.random(), Math.random()*Math.PI*2,0);
-          return speed.toArray();
+          speed.setFromCylindricalCoords(
+            2*Math.random(),
+            Math.random()*Math.PI*2,
+            -Math.random()
+          );
+          const arr = speed.toArray();
+          return [arr,arr,arr].flat();
         }
       ).flat()), 3));
 
@@ -185,13 +227,14 @@ function ParticleScene() {
   return (
     <group>
       
-      <mesh ref={partMesh}>
-        <fireParticleMaterial side={THREE.DoubleSide}/>
+      <mesh ref={partMesh} position={firePos}>
+        <fireParticleMaterial side={THREE.DoubleSide} particleCenter={firePos}/>
       </mesh>
       <mesh>
         <planeGeometry args={[100, 100, 300, 300]} />
         <colorShiftMaterial ref={materialRef} side={THREE.DoubleSide} color={new THREE.Color(0.1,0.0,0.2)}/>
       </mesh>
+
     </group>
   );
 }
