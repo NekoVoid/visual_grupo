@@ -93,6 +93,7 @@ Este ejercicio demuestra cómo diferentes representaciones del color influyen en
 
 ## 📁 Estructura del repositorio
 
+```
 2025-05-31_taller_modelos_color_percepcion/
 ├── README.md
 ├── Comparacion_daltonismo_1.png
@@ -102,3 +103,4 @@ Este ejercicio demuestra cómo diferentes representaciones del color influyen en
 ├── Witchs_heart.png
 └── python/
     └── Taller_modelos_color_percepcion.ipynb
+```
