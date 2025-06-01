@@ -71,11 +71,9 @@ Diferencias más evidentes entre tipos, mejor para propósitos educativos y real
 
 Se usó una imagen con una amplia gama de colores (rojos, verdes, azules, magentas) para comprobar cómo cada simulación afecta la percepción del color.
 
-Metodo 1:
-![Comparacion visual](Comparacion_daltonismo_1.png)
+![Comparacion visual 1](Comparacion_daltonismo_1.png)
 
-Metodo 2:
-![Comparacion visual](Comparacion_daltonismo_2.png)
+![Comparacion visual 2](Comparacion_daltonismo_2.png)
 ---
 
 ## 💬 Reflexión
