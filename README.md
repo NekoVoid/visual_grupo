@@ -2,4 +2,4 @@
 
 - proyecto:
 
-  Paerques interactivo
+  Parques interactivo
