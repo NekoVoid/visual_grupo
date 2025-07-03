@@ -210,7 +210,7 @@ public class NPCPatrulla : MonoBehaviour
 
 Comportamiento final:
 
-![Comportamiento final](capturas/gif.gif)
+![Comportamiento final](capturas/gif1.gif)
 
 ---
 
