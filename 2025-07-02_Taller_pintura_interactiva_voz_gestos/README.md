@@ -208,7 +208,7 @@ cv2.destroyAllWindows()
 ```
 ---
 
-![Ejemplo de uso](gif/gif1.gif)
+![Ejemplo de uso](gif/gif.gif)
 
 ---
 
