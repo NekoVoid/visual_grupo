@@ -26,7 +26,8 @@ function addPlaneToGeometry(geometry = new THREE.BufferGeometry()) {
 }
 
 const ColorShiftMaterial = shaderMaterial(
-  { time: 0, color: new THREE.Color(0.2, 0.0, 0.1), lightPosition: new THREE.Vector3(0, 1, 0),
+  { time: 0, ambientLight: 0.2, color: new THREE.Color(0.2, 0.0, 0.1), lightPosition: new THREE.Vector3(0, 1, 0),
+    lightColor: new THREE.Color(1.0, 1.0, 1.0), lightIntensity: 1.0,
     initRotMatrix: new THREE.Matrix4(
       1,                    0,                   0, 0,
       0,  Math.cos(Math.PI/2), Math.sin(Math.PI/2), 0,
@@ -67,15 +68,26 @@ const ColorShiftMaterial = shaderMaterial(
   /*glsl*/`
     uniform vec3 color;
     uniform vec3 lightPosition;
+    uniform vec3 lightColor;
     varying vec3 fragPos;
     varying vec3 fragNormal;
+
+    uniform float ambientLight;
+    uniform float lightIntensity;
+
     void main() {
       vec3 lightDir = lightPosition - fragPos;
 
       float lDistSqr = dot(lightDir, lightDir) + 1e-6;
-      float lightIntensity = clamp(90.0*dot(normalize(fragNormal), normalize(lightDir))/lDistSqr, 0.0, 1.0);
+      float finalLightIntensity = lightIntensity * dot(normalize(fragNormal), normalize(lightDir))/lDistSqr;
 
-      gl_FragColor = vec4(mix(color, vec3(1.0), lightIntensity), 1.0);
+      finalLightIntensity += ambientLight;
+
+      if (finalLightIntensity > 1.0) {
+        gl_FragColor = vec4(mix(lightColor, vec3(1.0), clamp(finalLightIntensity - 1.0, 0.0, 1.0)), 1.0);
+      }else {
+        gl_FragColor = vec4(mix(color, lightColor, finalLightIntensity), 1.0);
+      }
     }
   `
 )
