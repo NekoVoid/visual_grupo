@@ -15,9 +15,9 @@ public class BoxHandling : MonoBehaviour
 
   public BoxHandling GetNextBox(PieceHandling piece)
   {
-    if (nextBoxes.Count < 1)
+    if (nextBoxes.Count > 1)
     {
-      return (piece.color == color)? nextBoxes[0]: nextBoxes[1];
+      return (piece.color == color) ? nextBoxes[0] : nextBoxes[1];
     }
     return nextBoxes[0] ?? this;  
   }

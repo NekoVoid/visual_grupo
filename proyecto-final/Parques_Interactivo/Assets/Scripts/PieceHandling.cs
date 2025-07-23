@@ -44,9 +44,9 @@ public class PieceHandling : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
+    //Testing
     if (Input.GetKeyDown(KeyCode.Space))
     {
-      Debug.Log("what");
       if (currentBox != null)
       {
         var next = currentBox.GetNextBox(this);
