@@ -1,0 +1,9 @@
+- estados
+  GENERAL
+    ACEPTAR (aceptar accion)
+    CANCELAR (cancelar accion)
+  DADOS
+    LANZAR
+    ESCOGER_N (0-1)
+  FICHAS
+    ESCOGER_N (0-3)

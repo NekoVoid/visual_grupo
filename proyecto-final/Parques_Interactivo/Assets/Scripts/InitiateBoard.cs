@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Mathematics;
@@ -9,10 +10,19 @@ using UnityEngine.Splines;
 public class InitiateBoard : MonoBehaviour
 {
   public BoxHandling box;
-  public int boxCount = 2;
+  public int rampBoxCount = 2;
+  public int trackBoxCount = 2;
+  public PlayerColor[] sectionColor = {
+    PlayerColor.RED,
+    PlayerColor.YELLOW,
+    PlayerColor.BLUE,
+    PlayerColor.GREEN
+  };
+  public Tuple<int, BoxType> test;
+
   // public UnityEvent GetBox;
+  List<List<BoxHandling>> boxes;
   SplineContainer splines;
-  public List<List<BoxHandling>> boxes;
   // Start is called once before the first execution of Update after the MonoBehaviour is created
   void Start()
   {
@@ -35,18 +45,33 @@ public class InitiateBoard : MonoBehaviour
       Spline spline = splines.Splines[s];
       if (spline.Count == 2)
       {
-        boxes.Add(PlaceBoxesOnSpline(spline, boxCount, s));
+        boxes.Add(PlaceBoxesOnSpline(spline, rampBoxCount, s, sectionColor[s / 2]));
       }
       else
       {
-        boxes.Add(PlaceBoxesOnSpline(spline, boxCount * 2, s));
+        boxes.Add(PlaceBoxesOnSpline(spline, trackBoxCount, s, sectionColor[s / 2]));
+      }
+    }
+
+    for (int i = 0; i < boxes.Count; i++)
+    {
+      //circular access to boxes list
+      var nextBox = boxes[(i + 1) % boxes.Count][0];
+
+      if (boxes[i].Count == rampBoxCount)
+      {
+        boxes[i][0].nextBoxes.Add(nextBox);
+      }
+      else
+      {
+        boxes[i][boxes[i].Count - 1].nextBoxes.Add(nextBox);
       }
     }
   }
 
-  private List<BoxHandling> PlaceBoxesOnSpline(Spline spline, int boxCount, int splineIndex)
+  private List<BoxHandling> PlaceBoxesOnSpline(Spline spline, int boxCount, int splineIndex, PlayerColor splineColor)
   {
-    List<BoxHandling> boxes = new List<BoxHandling>();
+    List<BoxHandling> localBoxes = new List<BoxHandling>();
 
     //epsilon used for edge case solving
     const float epsilonSubStep = 100f;
@@ -70,24 +95,24 @@ public class InitiateBoard : MonoBehaviour
         spline.Evaluate(t, out pos, out tangent, out up);
       }
 
-      GameObject g = Instantiate(
-          box.gameObject,
+      BoxHandling boxHandling = Instantiate<BoxHandling>(
+          box,
           pos,
           Quaternion.LookRotation(tangent, up),
           gameObject.transform
       );
 
-      g.name = $"Box{i}Spline{splineIndex}";
+      boxHandling.name = $"Box{i}_{splineColor}";
+      boxHandling.color = splineColor;
 
-      BoxHandling boxHandling = g.GetComponent<BoxHandling>();
       if (i > 0)
       {
-        boxHandling.nextBoxes.Add(boxes[i - 1].gameObject);
+        localBoxes[i - 1].nextBoxes.Add(boxHandling);
       }
 
-      boxes.Add(g.GetComponent<BoxHandling>());
+      localBoxes.Add(boxHandling);
     }
-    return boxes;
+    return localBoxes;
   }
 
   private void DeleteBoxes()

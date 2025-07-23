@@ -1,37 +1,37 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class BoxHandling : MonoBehaviour
 {
-  public List<GameObject> nextBoxes;
+  public List<BoxHandling> nextBoxes;
   public BoxType type = BoxType.REGULAR;
   public PlayerColor color = PlayerColor.BLUE;
 
-  private List<PieceHandling> pieces = new List<PieceHandling>();
+  List<PieceHandling> pieces = new List<PieceHandling>();
 
-  public GameObject GetNextBox(PieceHandling piece)
+  public BoxHandling GetNextBox(PieceHandling piece)
   {
-    if (nextBoxes.Count > 1 && piece.color == color)
+    if (nextBoxes.Count < 1)
     {
-      return nextBoxes[1];
+      return (piece.color == color)? nextBoxes[0]: nextBoxes[1];
     }
-    return nextBoxes[0] ?? gameObject;
+    return nextBoxes[0] ?? this;  
   }
 
   // Moves a piece into this box
-  public int AddPiece(PieceHandling piece)
+  public void AddPiece(PieceHandling piece)
   {
-    //TODO: implement
-    return 0;
+    pieces.Add(piece);
+    ReorganizePieces();
   }
 
-// Removes a piece from this box
-  public void RemovePiece(int id)
+  // Removes a piece from this box
+  public void RemovePiece(PieceHandling piece)
   {
-    //TODO: immplement
+    if (pieces.Remove(piece)) ReorganizePieces();
   }
-
   public bool GetAndInformKill(PieceHandling piece)
   {
     //TODO: implement
@@ -40,7 +40,19 @@ public class BoxHandling : MonoBehaviour
 
   void ReorganizePieces()
   {
-    //TODO: implement
+    int count = pieces.Count;
+    foreach (var piece in pieces)
+    {
+      Vector3 pos;
+      Quaternion rot;
+      transform.GetPositionAndRotation(out pos, out rot);
+
+      var pieceRenderer = piece.GetComponent<Renderer>();
+
+      pos.y += pieceRenderer.bounds.extents.y + transform.lossyScale.y/2;
+
+      piece.transform.SetPositionAndRotation(pos, rot);
+    }
   }
 
   // Start is called once before the first execution of Update after the MonoBehaviour is created
