@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -23,10 +24,11 @@ public class BoxHandling : MonoBehaviour
   }
 
   // Moves a piece into this box
-  public void AddPiece(PieceHandling piece)
+  public Transform AddPiece(PieceHandling piece)
   {
     pieces.Add(piece);
     ReorganizePieces();
+    return pieces.Last().transform;
   }
 
   // Removes a piece from this box
