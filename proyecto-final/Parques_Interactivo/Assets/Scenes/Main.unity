@@ -154,6 +154,7 @@ MonoBehaviour:
   nextBoxes: []
   type: 0
   color: 2
+  test: 0.9
 --- !u!65 &9553570
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -279,6 +280,7 @@ MonoBehaviour:
   - {fileID: 817555546}
   type: 0
   color: 1
+  test: 0.9
 --- !u!65 &26689074
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -404,6 +406,7 @@ MonoBehaviour:
   - {fileID: 1242099185}
   type: 0
   color: 3
+  test: 0.9
 --- !u!65 &32731409
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -529,6 +532,7 @@ MonoBehaviour:
   - {fileID: 571487495}
   type: 0
   color: 0
+  test: 0.9
 --- !u!65 &40178555
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -700,6 +704,7 @@ MonoBehaviour:
   - {fileID: 229580633}
   type: 0
   color: 1
+  test: 0.9
 --- !u!65 &63932473
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -825,6 +830,7 @@ MonoBehaviour:
   - {fileID: 1533209600}
   type: 0
   color: 3
+  test: 0.9
 --- !u!65 &77971818
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1087,6 +1093,7 @@ MonoBehaviour:
   - {fileID: 1038680123}
   type: 0
   color: 2
+  test: 0.9
 --- !u!65 &145145527
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1961,6 +1968,7 @@ MonoBehaviour:
   - {fileID: 1267000140}
   type: 0
   color: 2
+  test: 0.9
 --- !u!65 &182321362
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2241,6 +2249,7 @@ MonoBehaviour:
   - {fileID: 26689073}
   type: 0
   color: 1
+  test: 0.9
 --- !u!65 &229580634
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2365,6 +2374,7 @@ MonoBehaviour:
   nextBoxes: []
   type: 0
   color: 3
+  test: 0.9
 --- !u!65 &230985133
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2490,6 +2500,7 @@ MonoBehaviour:
   - {fileID: 1066096726}
   type: 0
   color: 3
+  test: 0.9
 --- !u!65 &237854211
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2615,6 +2626,7 @@ MonoBehaviour:
   - {fileID: 1746535298}
   type: 0
   color: 3
+  test: 0.9
 --- !u!65 &242921919
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2740,6 +2752,7 @@ MonoBehaviour:
   - {fileID: 1391694873}
   type: 0
   color: 3
+  test: 0.9
 --- !u!65 &248018119
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2865,6 +2878,7 @@ MonoBehaviour:
   - {fileID: 1455670888}
   type: 0
   color: 2
+  test: 0.9
 --- !u!65 &251261053
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2990,6 +3004,7 @@ MonoBehaviour:
   - {fileID: 1851140547}
   type: 0
   color: 3
+  test: 0.9
 --- !u!65 &334835043
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3115,6 +3130,7 @@ MonoBehaviour:
   - {fileID: 873129475}
   type: 0
   color: 0
+  test: 0.9
 --- !u!65 &387014018
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3240,6 +3256,7 @@ MonoBehaviour:
   - {fileID: 820546820}
   type: 0
   color: 1
+  test: 0.9
 --- !u!65 &418359475
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3365,6 +3382,7 @@ MonoBehaviour:
   - {fileID: 1452970390}
   type: 0
   color: 2
+  test: 0.9
 --- !u!65 &462579285
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3599,6 +3617,7 @@ MonoBehaviour:
   - {fileID: 1781866644}
   type: 0
   color: 1
+  test: 0.9
 --- !u!65 &515975237
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3724,6 +3743,7 @@ MonoBehaviour:
   - {fileID: 1915376944}
   type: 0
   color: 1
+  test: 0.9
 --- !u!65 &548527429
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3849,6 +3869,7 @@ MonoBehaviour:
   - {fileID: 948315736}
   type: 0
   color: 0
+  test: 0.9
 --- !u!65 &571487496
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3974,6 +3995,7 @@ MonoBehaviour:
   - {fileID: 32731408}
   type: 0
   color: 3
+  test: 0.9
 --- !u!65 &627216053
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4099,6 +4121,7 @@ MonoBehaviour:
   - {fileID: 2075880917}
   type: 0
   color: 0
+  test: 0.9
 --- !u!65 &627409079
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4224,6 +4247,7 @@ MonoBehaviour:
   - {fileID: 671101300}
   type: 0
   color: 3
+  test: 0.9
 --- !u!65 &636104432
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4349,6 +4373,7 @@ MonoBehaviour:
   - {fileID: 145145526}
   type: 0
   color: 2
+  test: 0.9
 --- !u!65 &643856843
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4474,6 +4499,7 @@ MonoBehaviour:
   - {fileID: 237854210}
   type: 0
   color: 3
+  test: 0.9
 --- !u!65 &655322400
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4599,6 +4625,7 @@ MonoBehaviour:
   - {fileID: 627216052}
   type: 0
   color: 3
+  test: 0.9
 --- !u!65 &671101301
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4724,6 +4751,7 @@ MonoBehaviour:
   - {fileID: 643856842}
   type: 0
   color: 2
+  test: 0.9
 --- !u!65 &684330853
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4849,6 +4877,7 @@ MonoBehaviour:
   - {fileID: 2112595915}
   type: 0
   color: 0
+  test: 0.9
 --- !u!65 &688049647
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4974,6 +5003,7 @@ MonoBehaviour:
   - {fileID: 1544459300}
   type: 0
   color: 1
+  test: 0.9
 --- !u!65 &699270439
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5099,6 +5129,7 @@ MonoBehaviour:
   - {fileID: 1075033690}
   type: 0
   color: 2
+  test: 0.9
 --- !u!65 &752982957
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5224,6 +5255,7 @@ MonoBehaviour:
   - {fileID: 1040280249}
   type: 0
   color: 0
+  test: 0.9
 --- !u!65 &780097620
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5349,6 +5381,7 @@ MonoBehaviour:
   - {fileID: 1974433843}
   type: 0
   color: 1
+  test: 0
 --- !u!65 &817555547
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5473,6 +5506,7 @@ MonoBehaviour:
   nextBoxes: []
   type: 0
   color: 1
+  test: 0.9
 --- !u!65 &820546821
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5711,6 +5745,7 @@ MonoBehaviour:
   - {fileID: 2072949003}
   type: 0
   color: 1
+  test: 0.9
 --- !u!65 &846935024
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5836,6 +5871,7 @@ MonoBehaviour:
   - {fileID: 1035455358}
   type: 0
   color: 0
+  test: 0.9
 --- !u!65 &873129476
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6063,6 +6099,7 @@ MonoBehaviour:
   - {fileID: 230985132}
   type: 0
   color: 3
+  test: 0.9
 --- !u!65 &905609627
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6188,6 +6225,7 @@ MonoBehaviour:
   - {fileID: 1407625808}
   type: 0
   color: 3
+  test: 0.9
 --- !u!65 &919214488
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6313,6 +6351,7 @@ MonoBehaviour:
   - {fileID: 688049646}
   type: 0
   color: 0
+  test: 0.9
 --- !u!65 &948315737
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6438,6 +6477,7 @@ MonoBehaviour:
   - {fileID: 334835042}
   type: 0
   color: 3
+  test: 0.9
 --- !u!65 &980763491
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6563,6 +6603,7 @@ MonoBehaviour:
   - {fileID: 1939458972}
   type: 0
   color: 2
+  test: 0.9
 --- !u!65 &1000459123
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6688,6 +6729,7 @@ MonoBehaviour:
   - {fileID: 387014017}
   type: 0
   color: 0
+  test: 0.9
 --- !u!65 &1027959490
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6812,6 +6854,7 @@ MonoBehaviour:
   nextBoxes: []
   type: 0
   color: 0
+  test: 0.9
 --- !u!65 &1028034620
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6937,6 +6980,7 @@ MonoBehaviour:
   - {fileID: 40178554}
   type: 0
   color: 0
+  test: 0.9
 --- !u!65 &1035455359
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7062,6 +7106,7 @@ MonoBehaviour:
   - {fileID: 9553569}
   type: 0
   color: 2
+  test: 0.9
 --- !u!65 &1038680124
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7187,6 +7232,7 @@ MonoBehaviour:
   - {fileID: 1169354615}
   type: 0
   color: 1
+  test: 0.9
 --- !u!65 &1039880630
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7313,6 +7359,7 @@ MonoBehaviour:
   - {fileID: 1080534847}
   type: 0
   color: 3
+  test: 0.9
 --- !u!65 &1040280250
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7438,6 +7485,7 @@ MonoBehaviour:
   - {fileID: 1027959489}
   type: 0
   color: 0
+  test: 0.9
 --- !u!65 &1042981432
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7563,6 +7611,7 @@ MonoBehaviour:
   - {fileID: 636104431}
   type: 0
   color: 3
+  test: 0.9
 --- !u!65 &1066096727
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7688,6 +7737,7 @@ MonoBehaviour:
   - {fileID: 1754668683}
   type: 0
   color: 2
+  test: 0.9
 --- !u!65 &1075033691
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7813,6 +7863,7 @@ MonoBehaviour:
   - {fileID: 242921918}
   type: 0
   color: 3
+  test: 0.9
 --- !u!65 &1080534848
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7938,6 +7989,7 @@ MonoBehaviour:
   - {fileID: 1567848712}
   type: 0
   color: 0
+  test: 0.9
 --- !u!65 &1083425398
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8063,6 +8115,7 @@ MonoBehaviour:
   - {fileID: 418359474}
   type: 0
   color: 1
+  test: 0.9
 --- !u!65 &1093734822
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8189,6 +8242,7 @@ MonoBehaviour:
   - {fileID: 2056949335}
   type: 0
   color: 2
+  test: 0.9
 --- !u!65 &1169354616
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8314,6 +8368,7 @@ MonoBehaviour:
   - {fileID: 627409078}
   type: 0
   color: 0
+  test: 0.9
 --- !u!65 &1183764248
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8439,6 +8494,7 @@ MonoBehaviour:
   - {fileID: 548527428}
   type: 0
   color: 1
+  test: 0.9
 --- !u!65 &1193299474
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8564,6 +8620,7 @@ MonoBehaviour:
   - {fileID: 1645110130}
   type: 0
   color: 0
+  test: 0.9
 --- !u!65 &1208635611
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8689,6 +8746,7 @@ MonoBehaviour:
   - {fileID: 1498055850}
   type: 0
   color: 3
+  test: 0.9
 --- !u!65 &1242099186
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8814,6 +8872,7 @@ MonoBehaviour:
   - {fileID: 1387221082}
   type: 0
   color: 2
+  test: 0.9
 --- !u!65 &1267000141
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9024,6 +9083,7 @@ MonoBehaviour:
   - {fileID: 1183764247}
   type: 0
   color: 0
+  test: 0.9
 --- !u!65 &1329610943
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9149,6 +9209,7 @@ MonoBehaviour:
   - {fileID: 1510413749}
   type: 0
   color: 2
+  test: 0.9
 --- !u!65 &1387221083
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9274,6 +9335,7 @@ MonoBehaviour:
   - {fileID: 919214487}
   type: 0
   color: 3
+  test: 0.9
 --- !u!65 &1391694874
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9399,6 +9461,7 @@ MonoBehaviour:
   - {fileID: 251261052}
   type: 0
   color: 2
+  test: 0.9
 --- !u!65 &1401241221
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9524,6 +9587,7 @@ MonoBehaviour:
   - {fileID: 655322399}
   type: 0
   color: 3
+  test: 0.9
 --- !u!65 &1407625809
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9649,6 +9713,7 @@ MonoBehaviour:
   - {fileID: 1083425397}
   type: 0
   color: 0
+  test: 0.9
 --- !u!65 &1452712910
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9775,6 +9840,7 @@ MonoBehaviour:
   - {fileID: 1452712909}
   type: 0
   color: 0
+  test: 0.9
 --- !u!65 &1452970391
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9900,6 +9966,7 @@ MonoBehaviour:
   - {fileID: 752982956}
   type: 0
   color: 2
+  test: 0.9
 --- !u!65 &1455670889
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10025,6 +10092,7 @@ MonoBehaviour:
   - {fileID: 699270438}
   type: 0
   color: 1
+  test: 0.9
 --- !u!65 &1457503769
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10259,6 +10327,7 @@ MonoBehaviour:
   - {fileID: 1583938397}
   type: 0
   color: 2
+  test: 0.9
 --- !u!65 &1477648668
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10399,6 +10468,7 @@ MonoBehaviour:
   - {fileID: 1896463499}
   type: 0
   color: 3
+  test: 0.9
 --- !u!65 &1498055851
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10509,6 +10579,7 @@ MonoBehaviour:
   - {fileID: 1039880629}
   type: 0
   color: 1
+  test: 0.9
 --- !u!65 &1507637051
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10634,6 +10705,7 @@ MonoBehaviour:
   - {fileID: 1477648667}
   type: 0
   color: 2
+  test: 0.9
 --- !u!65 &1510413750
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10759,6 +10831,7 @@ MonoBehaviour:
   - {fileID: 980763490}
   type: 0
   color: 3
+  test: 0.9
 --- !u!65 &1533209601
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10884,6 +10957,7 @@ MonoBehaviour:
   - {fileID: 2079939763}
   type: 0
   color: 1
+  test: 0.9
 --- !u!65 &1541074385
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11009,6 +11083,7 @@ MonoBehaviour:
   - {fileID: 1691369528}
   type: 0
   color: 1
+  test: 0.9
 --- !u!65 &1544459301
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11134,6 +11209,7 @@ MonoBehaviour:
   - {fileID: 684330852}
   type: 0
   color: 2
+  test: 0.9
 --- !u!65 &1565991570
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11259,6 +11335,7 @@ MonoBehaviour:
   - {fileID: 1042981431}
   type: 0
   color: 0
+  test: 0.9
 --- !u!65 &1567848713
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11463,6 +11540,7 @@ MonoBehaviour:
   - {fileID: 462579284}
   type: 0
   color: 2
+  test: 0.9
 --- !u!65 &1583938398
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11588,6 +11666,7 @@ MonoBehaviour:
   - {fileID: 1565991569}
   type: 0
   color: 2
+  test: 0.9
 --- !u!65 &1622768795
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11713,6 +11792,7 @@ MonoBehaviour:
   - {fileID: 780097619}
   type: 0
   color: 0
+  test: 0.9
 --- !u!65 &1645110131
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11838,6 +11918,7 @@ MonoBehaviour:
   - {fileID: 63932472}
   type: 0
   color: 1
+  test: 0.9
 --- !u!65 &1691369529
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12072,6 +12153,7 @@ MonoBehaviour:
   - {fileID: 1865765197}
   type: 0
   color: 0
+  test: 0.9
 --- !u!65 &1717306425
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12197,6 +12279,7 @@ MonoBehaviour:
   - {fileID: 248018118}
   type: 0
   color: 3
+  test: 0.9
 --- !u!65 &1746535299
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12322,6 +12405,7 @@ MonoBehaviour:
   - {fileID: 182321361}
   type: 0
   color: 2
+  test: 0.9
 --- !u!65 &1754668684
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12447,6 +12531,7 @@ MonoBehaviour:
   - {fileID: 1093734821}
   type: 0
   color: 1
+  test: 0.9
 --- !u!65 &1781866645
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12693,6 +12778,7 @@ MonoBehaviour:
   - {fileID: 905609626}
   type: 0
   color: 3
+  test: 0.9
 --- !u!65 &1851140548
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12818,6 +12904,7 @@ MonoBehaviour:
   - {fileID: 1329610942}
   type: 0
   color: 0
+  test: 0.9
 --- !u!65 &1865765198
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12944,6 +13031,7 @@ MonoBehaviour:
   - {fileID: 1457503768}
   type: 0
   color: 1
+  test: 0.9
 --- !u!65 &1896463500
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13069,6 +13157,7 @@ MonoBehaviour:
   - {fileID: 1507637050}
   type: 0
   color: 1
+  test: 0.9
 --- !u!65 &1915376945
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13194,6 +13283,7 @@ MonoBehaviour:
   - {fileID: 1401241220}
   type: 0
   color: 2
+  test: 0.9
 --- !u!65 &1939458973
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13319,6 +13409,7 @@ MonoBehaviour:
   - {fileID: 1541074384}
   type: 0
   color: 1
+  test: 0.9
 --- !u!65 &1974433844
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13444,6 +13535,7 @@ MonoBehaviour:
   - {fileID: 1000459122}
   type: 0
   color: 2
+  test: 0.9
 --- !u!65 &2056949336
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13601,6 +13693,7 @@ MonoBehaviour:
   - {fileID: 515975236}
   type: 0
   color: 1
+  test: 0.9
 --- !u!65 &2072949004
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13726,6 +13819,7 @@ MonoBehaviour:
   - {fileID: 1028034619}
   type: 0
   color: 0
+  test: 0.9
 --- !u!65 &2075880918
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13851,6 +13945,7 @@ MonoBehaviour:
   - {fileID: 1193299473}
   type: 0
   color: 1
+  test: 0.9
 --- !u!65 &2079939764
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14008,6 +14103,7 @@ MonoBehaviour:
   - {fileID: 1208635610}
   type: 0
   color: 0
+  test: 0.9
 --- !u!65 &2112595916
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14111,31 +14207,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3205856873492390258, guid: 0b8b1da6ec26f95498eb16cdb2690624, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -4.3809814
       objectReference: {fileID: 0}
     - target: {fileID: 3205856873492390258, guid: 0b8b1da6ec26f95498eb16cdb2690624, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7500002
+      value: 0.99996394
       objectReference: {fileID: 0}
     - target: {fileID: 3205856873492390258, guid: 0b8b1da6ec26f95498eb16cdb2690624, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13
+      value: 5.127934
       objectReference: {fileID: 0}
     - target: {fileID: 3205856873492390258, guid: 0b8b1da6ec26f95498eb16cdb2690624, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: -0.31826577
       objectReference: {fileID: 0}
     - target: {fileID: 3205856873492390258, guid: 0b8b1da6ec26f95498eb16cdb2690624, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.00000066519027
+      value: -0.0000685599
       objectReference: {fileID: 0}
     - target: {fileID: 3205856873492390258, guid: 0b8b1da6ec26f95498eb16cdb2690624, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0.94800156
       objectReference: {fileID: 0}
     - target: {fileID: 3205856873492390258, guid: 0b8b1da6ec26f95498eb16cdb2690624, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.000023017126
       objectReference: {fileID: 0}
     - target: {fileID: 3205856873492390258, guid: 0b8b1da6ec26f95498eb16cdb2690624, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -14180,6 +14276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: 0
+  testBoxAdd: 15
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

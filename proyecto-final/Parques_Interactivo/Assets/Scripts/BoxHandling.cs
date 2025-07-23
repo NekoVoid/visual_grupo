@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -7,6 +9,7 @@ public class BoxHandling : MonoBehaviour
   public List<BoxHandling> nextBoxes;
   public BoxType type = BoxType.REGULAR;
   public PlayerColor color = PlayerColor.BLUE;
+  public float test = 0.9f;
 
   List<PieceHandling> pieces = new List<PieceHandling>();
 
@@ -40,15 +43,22 @@ public class BoxHandling : MonoBehaviour
   void ReorganizePieces()
   {
     int count = pieces.Count;
-    foreach (var piece in pieces)
+
+    for (int i = 0; i < count; i++)
     {
-      Vector3 pos;
-      Quaternion rot;
-      transform.GetPositionAndRotation(out pos, out rot);
+      var piece = pieces[i];
 
       var pieceRenderer = piece.GetComponent<Renderer>();
 
-      pos.y += pieceRenderer.bounds.extents.y + transform.lossyScale.y/2;
+      Vector3 pos = new Vector3(
+        (float)i/(float)count - (1f - 1f/count)/2f,
+        1f/2f + pieceRenderer.bounds.extents.y,
+        0
+      );
+      Quaternion rot = transform.rotation * quaternion.identity;
+
+
+      pos = transform.TransformPoint(pos);
 
       piece.transform.SetPositionAndRotation(pos, rot);
     }

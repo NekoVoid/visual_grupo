@@ -6,7 +6,9 @@ using UnityEngine.UIElements;
 public class PieceHandling : MonoBehaviour
 {
   public PlayerColor color = PlayerColor.BLUE;
+  public int testBoxAdd = 0;
   BoxHandling currentBox;
+  
 
   public void Killed()
   {
@@ -29,7 +31,7 @@ public class PieceHandling : MonoBehaviour
 
     var board = GameObject.Find("BoxBoard");
     if (board == null) return;
-    var box = board.transform.GetChild(0).GetComponent<BoxHandling>();
+    var box = board.transform.GetChild(testBoxAdd).GetComponent<BoxHandling>();
 
     Debug.Log(box);
 
