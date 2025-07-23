@@ -36,8 +36,7 @@ public class BoxHandling : MonoBehaviour
   }
   public bool GetAndInformKill(PieceHandling piece)
   {
-    //TODO: implement
-    return false;
+    return type == BoxType.REGULAR && pieces.Count == 1 && pieces[0].color != piece.color;
   }
 
   void ReorganizePieces()
