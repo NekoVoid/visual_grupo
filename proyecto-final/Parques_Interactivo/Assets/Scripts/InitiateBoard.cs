@@ -35,7 +35,7 @@ public class InitiateBoard : MonoBehaviour
 
   }
 
-  [ContextMenu("place boxes")]
+  // [ContextMenu("place boxes")]
   public void GenerateBoxes()
   {
     DeleteBoxes();

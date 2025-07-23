@@ -11,5 +11,7 @@ public enum BoxType
   REGULAR,
   INTERSECTION,
   SAFE,
-  EXIT
+  EXIT,
+  END,
+  START
 }
