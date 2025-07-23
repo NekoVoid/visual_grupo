@@ -1,57 +1,47 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BoxHandling : MonoBehaviour
 {
-  public List<GameObject> nextBoxes;
-  public BoxType type = BoxType.REGULAR;
-  public PlayerColor color = PlayerColor.BLUE;
+    public BoxType type = BoxType.REGULAR;
 
-  private List<PieceHandling> pieces = new List<PieceHandling>();
+    private List<PieceHandling> pieces = new List<PieceHandling>();
 
-  public GameObject GetNextBox(PieceHandling piece)
-  {
-    if (nextBoxes.Count > 1 && piece.color == color)
+    public Renderer rend;
+
+    private void Awake()
     {
-      return nextBoxes[1];
+        if (rend == null)
+            rend = GetComponent<Renderer>();
     }
-    return nextBoxes[0] ?? gameObject;
-  }
 
-  // Moves a piece into this box
-  public int AddPiece(PieceHandling piece)
-  {
-    //TODO: implement
-    return 0;
-  }
+    public void SetColor(Color color)
+    {
+        if (rend != null)
+        {
+            rend.material.color = color;
+        }
+    }
 
-// Removes a piece from this box
-  public void RemovePiece(int id)
-  {
-    //TODO: immplement
-  }
+    public int AddPiece(PieceHandling piece)
+    {
+        // TODO: Implementar lógica de agregar pieza
+        return 0;
+    }
 
-  public bool GetAndInformKill(PieceHandling piece)
-  {
-    //TODO: implement
-    return false;
-  }
+    public void RemovePiece(int id)
+    {
+        // TODO: Implementar lógica de remover pieza
+    }
 
-  void ReorganizePieces()
-  {
-    //TODO: implement
-  }
+    public bool GetAndInformKill(PieceHandling piece)
+    {
+        // TODO: Implementar lógica de matar pieza
+        return false;
+    }
 
-  // Start is called once before the first execution of Update after the MonoBehaviour is created
-  void Start()
-  {
-
-  }
-
-  // Update is called once per frame
-  void Update()
-  {
-
-  }
+    void ReorganizePieces()
+    {
+        // TODO: Implementar lógica de reorganización
+    }
 }

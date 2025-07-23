@@ -82,7 +82,7 @@ public class InitiateBoard : MonoBehaviour
       BoxHandling boxHandling = g.GetComponent<BoxHandling>();
       if (i > 0)
       {
-        boxHandling.nextBoxes.Add(boxes[i - 1].gameObject);
+        //boxHandling.nextBoxes.Add(boxes[i - 1].gameObject);
       }
 
       boxes.Add(g.GetComponent<BoxHandling>());

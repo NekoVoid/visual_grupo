@@ -5,16 +5,9 @@ using System.Collections.Generic;
 public class DiceRoller : MonoBehaviour
 {
     public GameObject dicePrefab;
+    public TurnManager turnManager;
 
     private GameObject dice1, dice2;
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            RollDice();
-        }
-    }
 
     public void RollDice()
     {
@@ -23,20 +16,8 @@ public class DiceRoller : MonoBehaviour
 
         Vector3 basePos = transform.position;
 
-        Vector3 offset1 = new Vector3(
-            Random.Range(-0.5f, 0.5f),
-            Random.Range(0.5f, 1.5f),
-            Random.Range(-0.5f, 0.5f)
-        );
-
-        Vector3 offset2 = new Vector3(
-            Random.Range(-0.5f, 0.5f),
-            Random.Range(0.5f, 1.5f),
-            Random.Range(-0.5f, 0.5f)
-        );
-
-        Vector3 pos1 = basePos + offset1;
-        Vector3 pos2 = basePos + offset2;
+        Vector3 pos1 = basePos + new Vector3(-0.5f, 1f, 0f);
+        Vector3 pos2 = basePos + new Vector3(0.5f, 1f, 0f);
 
         dice1 = Instantiate(dicePrefab, pos1, Random.rotation);
         dice2 = Instantiate(dicePrefab, pos2, Random.rotation);
@@ -61,10 +42,10 @@ public class DiceRoller : MonoBehaviour
 
         while (true)
         {
-            bool dice1Still = rb1.linearVelocity.magnitude < threshold && rb1.angularVelocity.magnitude < threshold;
-            bool dice2Still = rb2.linearVelocity.magnitude < threshold && rb2.angularVelocity.magnitude < threshold;
+            bool still1 = rb1.linearVelocity.magnitude < threshold && rb1.angularVelocity.magnitude < threshold;
+            bool still2 = rb2.linearVelocity.magnitude < threshold && rb2.angularVelocity.magnitude < threshold;
 
-            if (dice1Still && dice2Still)
+            if (still1 && still2)
             {
                 timeStill += Time.deltaTime;
                 if (timeStill >= requiredStillTime)
@@ -83,8 +64,9 @@ public class DiceRoller : MonoBehaviour
 
         Debug.Log("Resultado dado 1: " + r1);
         Debug.Log("Resultado dado 2: " + r2);
-    }
 
+        turnManager.OnDiceRolled(r1, r2); // Notifica al TurnManager
+    }
 
     int GetTopFaceNumber(GameObject dice)
     {
