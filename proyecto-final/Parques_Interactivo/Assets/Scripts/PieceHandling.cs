@@ -7,7 +7,7 @@ public class PieceHandling : MonoBehaviour
 {
   public PlayerColor color = PlayerColor.BLUE;
   public int testBoxAdd = 0;
-  BoxHandling currentBox;
+  public BoxHandling currentBox;
   
 
   public void Killed()
@@ -41,8 +41,27 @@ public class PieceHandling : MonoBehaviour
 
   }
 
-  // Update is called once per frame
-  void Update()
+    public void MoveOneStep()
+    {
+        if (currentBox != null)
+        {
+            var next = currentBox.GetNextBox(this);
+            if (next != null)
+            {
+                currentBox.RemovePiece(this);
+                currentBox = next;
+                currentBox.AddPiece(this);
+            }
+            else
+            {
+                Debug.LogWarning("No hay siguiente casilla.");
+            }
+        }
+    }
+
+
+    // Update is called once per frame
+    void Update()
   {
     //Testing
     if (Input.GetKeyDown(KeyCode.Space))

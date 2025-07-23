@@ -30,6 +30,7 @@ public class BoxHandling : MonoBehaviour
     ReorganizePieces();
     return pieces.Last().transform;
   }
+    
 
   // Removes a piece from this box
   public void RemovePiece(PieceHandling piece)
@@ -38,8 +39,8 @@ public class BoxHandling : MonoBehaviour
   }
   public bool GetAndInformKill(PieceHandling piece)
   {
-    return type == BoxType.REGULAR && pieces.Count == 1 && pieces[0].color != piece.color;
-  }
+        return type == BoxType.REGULAR && pieces.Count == 1 && pieces[0].color != piece.color;
+    }
 
   void ReorganizePieces()
   {

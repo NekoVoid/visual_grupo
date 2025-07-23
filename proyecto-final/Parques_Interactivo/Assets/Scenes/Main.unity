@@ -1656,6 +1656,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diceRoller: {fileID: 56167854}
   players: []
+  piecePrefab: {fileID: 320659660809681990, guid: 0b8b1da6ec26f95498eb16cdb2690624, type: 3}
 --- !u!4 &220463064
 Transform:
   m_ObjectHideFlags: 0
