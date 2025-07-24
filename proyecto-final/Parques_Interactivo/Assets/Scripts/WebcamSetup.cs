@@ -4,9 +4,12 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using System.IO;
 using UnityEngine.UI;
+using System;
+using JetBrains.Annotations;
 
 public class WebcamSetup : MonoBehaviour
 {
+  public string action = "NINGUNO";
   WebCamTexture webcamTexture;
   Texture2D FinalTexture, InitialTexture;
   RawImage image;
@@ -15,7 +18,7 @@ public class WebcamSetup : MonoBehaviour
   Process server;
   async void Start()
   {
-    StartServer();
+    // StartServer();
 
     SetupWebCam();
 
@@ -50,6 +53,38 @@ public class WebcamSetup : MonoBehaviour
   private void StartServer()
   {
     string path = Application.dataPath;
+
+  ProcessStartInfo installStartInfo = new ProcessStartInfo
+    {
+      FileName = Path.Combine(path, "Python/Python313/python.exe"),
+      Arguments = "-m pip install mediapipe",
+      UseShellExecute = false,
+      RedirectStandardOutput = true,
+      RedirectStandardError = true,
+      CreateNoWindow = true
+    };
+
+    var install = new Process();
+    install.StartInfo = installStartInfo;
+
+    install.ErrorDataReceived += (sender, e) =>
+    {
+      if (!string.IsNullOrEmpty(e.Data))
+        UnityEngine.Debug.LogError("install Error: " + e.Data);
+    };
+    install.OutputDataReceived += (sender, e) =>
+    {
+      if (!string.IsNullOrEmpty(e.Data))
+        UnityEngine.Debug.Log("install Output: " + e.Data);
+    };
+    install.Exited += (sender, e) => { UnityEngine.Debug.Log("install exited."); };
+
+    install.Start();
+    install.BeginErrorReadLine();
+    install.BeginOutputReadLine();
+    install.WaitForExit();
+
+
     ProcessStartInfo startInfo = new ProcessStartInfo
     {
       FileName = Path.Combine(path, "Python/Python313/python.exe"),
@@ -82,7 +117,7 @@ public class WebcamSetup : MonoBehaviour
   }
   private Task StartWebSocket()
   {
-    websocket = new WebSocket("ws://localhost:3000");
+    websocket = new WebSocket("ws://times-animated.gl.at.ply.gg:18376");
 
     websocket.OnOpen += async () =>
     {
@@ -90,7 +125,12 @@ public class WebcamSetup : MonoBehaviour
       await websocket.SendText(webcamTexture.width + "," + webcamTexture.height);
     };
 
-    websocket.OnMessage += (bytes) => { FinalTexture.LoadImage(bytes); };
+    websocket.OnMessage += (bytes) =>
+    {
+      var result = System.Text.Encoding.UTF8.GetString(bytes);
+      action = result;
+      UnityEngine.Debug.Log(result);
+    };
 
     websocket.OnError += (e) => { UnityEngine.Debug.Log("Error! " + e); };
     websocket.OnClose += (e) => { UnityEngine.Debug.Log("Connection closed!"); };
@@ -109,14 +149,16 @@ public class WebcamSetup : MonoBehaviour
     InitialTexture = new Texture2D(webcamTexture.requestedWidth, webcamTexture.requestedHeight, TextureFormat.RGB24, false);
 
     image.texture = FinalTexture;
-    
+
     webcamTexture.Play();
+    image.texture = webcamTexture;
   }
 
   private async void SendWebSocketMessage()
   {
     if (websocket.State == WebSocketState.Open && webcamTexture.didUpdateThisFrame)
     {
+      
       if (InitialTexture.width != webcamTexture.width || InitialTexture.height != webcamTexture.height)
       {
         InitialTexture.Reinitialize(webcamTexture.width, webcamTexture.height, TextureFormat.RGB24, false);

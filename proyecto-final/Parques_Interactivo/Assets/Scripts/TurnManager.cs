@@ -6,6 +6,7 @@ public class TurnManager : MonoBehaviour
 {
     public DiceRoller diceRoller;
     public GameObject piecePrefab;
+    public WebcamSetup handInfo;
 
     private int currentPlayerIndex = 0;
     private int[] diceValues = new int[2];
@@ -47,7 +48,7 @@ public class TurnManager : MonoBehaviour
             var boxObject = GameObject.Find("Start_" + color);
             if (boxObject == null)
             {
-                Debug.LogError($"No se encontró la casilla Start_{color}");
+                Debug.LogError($"No se encontrï¿½ la casilla Start_{color}");
                 continue;
             }
 
@@ -91,17 +92,17 @@ public class TurnManager : MonoBehaviour
         switch (stage)
         {
             case TurnStage.WaitingForRoll:
-                if (Input.GetKeyDown(KeyCode.Q))
+                if (handInfo.action == "LANZAR")
                 {
                     diceRoller.RollDice(); // Esto debe terminar llamando a OnDiceRolled
                 }
                 break;
 
             case TurnStage.SelectingDice:
-                if (Input.GetKeyDown(KeyCode.Alpha1)) selectedDiceIndex = 0;
-                if (Input.GetKeyDown(KeyCode.Alpha2)) selectedDiceIndex = 1;
+                if (handInfo.action == "ESCOGER_1") selectedDiceIndex = 0;
+                if (handInfo.action == "ESCOGER_2") selectedDiceIndex = 1;
 
-                if (selectedDiceIndex != -1 && !diceUsed[selectedDiceIndex] && Input.GetKeyDown(KeyCode.P))
+                if (selectedDiceIndex != -1 && !diceUsed[selectedDiceIndex] && handInfo.action == "ACEPTAR")
                 {
                     Debug.Log($"Dado seleccionado: {diceValues[selectedDiceIndex]}");
                     stage = TurnStage.SelectingPiece;
@@ -109,12 +110,12 @@ public class TurnManager : MonoBehaviour
                 break;
 
             case TurnStage.SelectingPiece:
-                if (Input.GetKeyDown(KeyCode.Alpha1)) selectedPieceIndex = 0;
-                if (Input.GetKeyDown(KeyCode.Alpha2)) selectedPieceIndex = 1;
-                if (Input.GetKeyDown(KeyCode.Alpha3)) selectedPieceIndex = 2;
-                if (Input.GetKeyDown(KeyCode.Alpha4)) selectedPieceIndex = 3;
+                if (handInfo.action == "ESCOGER_1") selectedPieceIndex = 0;
+                if (handInfo.action == "ESCOGER_2") selectedPieceIndex = 1;
+                if (handInfo.action == "ESCOGER_3") selectedPieceIndex = 2;
+                if (handInfo.action == "ESCOGER_4") selectedPieceIndex = 3;
 
-                if (selectedPieceIndex != -1 && Input.GetKeyDown(KeyCode.P))
+                if (selectedPieceIndex != -1 && handInfo.action == "ACEPTAR")
                 {
                     var piece = currentPlayer.pieces[selectedPieceIndex];
                     int steps = diceValues[selectedDiceIndex];
